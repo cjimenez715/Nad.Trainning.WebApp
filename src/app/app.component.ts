@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  title = 'World Angular!!';
-  projectName = 'NadWEB Test '
+  public title : string  = 'World Angular!!' ;
+
+  public projectName : string = 'NadWEB pull Request';
 }
