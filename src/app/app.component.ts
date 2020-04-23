@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-  public title : string  = 'World Angular!!' ;
+  public title : string  = 'World Angular Test!!' ;
 
   public projectName : string = 'NadWEB pull Request';
 }

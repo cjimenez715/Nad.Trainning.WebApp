@@ -7,9 +7,9 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "inlineTemplate": true,
+          "inlineTemplate": false,
           "inlineStyle": false,
-          "skipTests": false
+          "skipTests": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -51,6 +51,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -104,6 +105,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Nad-Trainning-WebApp"
+    }
+  },
+  "defaultProject": "Nad-Trainning-WebApp",
+  "cli": {
+    "analytics": "ee3f299d-653e-46dd-9ee7-cd5496e55845"
+  }
 }
