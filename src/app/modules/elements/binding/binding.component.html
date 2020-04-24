@@ -1,0 +1,27 @@
+<section>
+<input type="text" [value] = "bind">
+<br>
+<label for="">{{bind}}</label>
+</section>
+<section>
+<input [(ngModel)]="binde">
+<br>
+<label for="">{{binde}}</label>
+</section>
+<section>
+    <button (click) = "bindingMetodh(binde)">
+        Push
+    </button>
+</section>
+<section class="table">
+  <table>
+    <thead>
+        <tr> <th>Nombre</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of person">
+            <td>{{item}}</td>
+        </tr>
+    </tbody>
+</table>  
+</section>
