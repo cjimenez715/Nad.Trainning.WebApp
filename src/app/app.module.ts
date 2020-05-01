@@ -16,6 +16,10 @@ import { MatTableModule } from '@angular/material/table';
 import { DirectiveComponent } from './modules/elements/directive/directive.component';
 import { BindingComponent } from './modules/elements/binding/binding.component';
 import { WelcomeComponent } from './modules/home/welcome/welcome.component';
+import { PipeComponent } from './modules/elements/pipe/pipe.component';
+import { RedDirective } from './directives/red.directive';
+import { ForDirective } from './directives/for.directive';
+import { UppercasePipe } from './pipes/uppercase.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +29,11 @@ import { WelcomeComponent } from './modules/home/welcome/welcome.component';
     ROUTED_COMPONENTS,
     DirectiveComponent,
     BindingComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    PipeComponent,
+    RedDirective,
+    ForDirective,
+    UppercasePipe
   ],
   imports: [
     BrowserModule,

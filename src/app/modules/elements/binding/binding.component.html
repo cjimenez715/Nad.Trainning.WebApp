@@ -6,7 +6,7 @@
 <section>
 <input [(ngModel)]="binde">
 <br>
-<label for="">{{binde}}</label>
+<label for="">{{binde | uppercase}}</label>
 </section>
 <section>
     <button (click) = "bindingMetodh(binde)">
@@ -25,3 +25,4 @@
     </tbody>
 </table>  
 </section>
+

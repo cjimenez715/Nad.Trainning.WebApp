@@ -14,17 +14,22 @@
                 Bindings
             </a>
             <a [routerLink]="['/app-directive']" mat-list-item>
-                <i class="material-icons">
+                <i class="material-icons" appRed>
                     input
                 </i>
                 Directive
             </a>
-            <a mat-list-item>
+            <a [routerLink]="['/app-pipe']" mat-list-item>
                 <i class="material-icons">
                     linear_scale
                 </i>
                 Pipe
             </a>
+
+            <ul>
+                <li *appFor="let n Em [1, 2, 3]  " >  {{n}}   </li>
+            </ul>
+
         </mat-nav-list>
     </mat-sidenav>
 </mat-sidenav-container>
