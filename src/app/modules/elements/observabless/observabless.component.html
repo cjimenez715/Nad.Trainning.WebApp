@@ -1,0 +1,10 @@
+<p>observabless works!</p>
+
+<h1> observables</h1>
+<span *ngIf="conTrafico">Con trafico</span>
+<span *ngIf="!conTrafico">Sin trafico</span>
+
+<button (click)="conTrafico = !conTrafico">Cambiar trafico</button>
+<button (click)="novioEsperando()"> Esperar Novia</button>
+<br>
+<p>{{mensajeAyudante}} - {{mensajeInf}}</p>

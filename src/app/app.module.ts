@@ -20,6 +20,8 @@ import { PipeComponent } from './modules/elements/pipe/pipe.component';
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
+import { ObservablessComponent } from './modules/elements/observabless/observabless.component';
+import { SubjectssComponent } from './modules/elements/subjectss/subjectss.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { UppercasePipe } from './pipes/uppercase.pipe';
     PipeComponent,
     RedDirective,
     ForDirective,
-    UppercasePipe
+    UppercasePipe,
+    ObservablessComponent,
+    SubjectssComponent
   ],
   imports: [
     BrowserModule,

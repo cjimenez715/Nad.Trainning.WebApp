@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./directive.component.css']
 })
 export class DirectiveComponent implements OnInit {
-
-  constructor() { }
+public texto : string;
+  constructor() {
+    this.texto='directive works!';
+   }
 
   ngOnInit(): void {
   }
