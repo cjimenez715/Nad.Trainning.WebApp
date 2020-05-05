@@ -24,7 +24,7 @@ export class SubjectssComponent implements OnInit {
   }
   completar() : void{
     this.numeroSubject.complete();
-   // this.numeroSubject.unsubscribe();
+    this.numeroSubject.unsubscribe();
   }  
 
 }
