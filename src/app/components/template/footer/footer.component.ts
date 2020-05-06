@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   template: `
    <mat-toolbar class="footer">
    <span>
-   Copyright <strong> © 2019 NAD </strong>
+   Copyright <strong> © 2020 NAD </strong>
    </span>
    </mat-toolbar>
   `,

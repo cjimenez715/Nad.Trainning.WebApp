@@ -6,7 +6,7 @@ import { thistle } from 'color-name';
 })
 export class ForDirective implements OnInit{ 
   @Input('appForEm') numbers: number[]  
-  @Input('appForTexto') mombre: string
+  @Input('appForText') text: string
   constructor(
     private container : ViewContainerRef, 
     private template: TemplateRef<any>) { 
@@ -15,7 +15,7 @@ export class ForDirective implements OnInit{
   ngOnInit(): void{
     console.log(this.numbers) 
     for(let number of this.numbers){
-      this.container.createEmbeddedView(this.template, {$implicit: number + this.mombre});
+      this.container.createEmbeddedView(this.template, {$implicit: number + this.text});
     }
   }
 

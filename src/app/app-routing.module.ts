@@ -1,5 +1,5 @@
-import { ObservablessComponent } from './modules/elements/observabless/observabless.component';
-import { SubjectssComponent } from './modules/elements/subjectss/subjectss.component';
+import { ObservablesComponent } from './modules/elements/observables/observables.component';
+import { SubjectsComponent } from './modules/elements/subjects/subjects.component';
 import { Observable } from 'rxjs';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -15,8 +15,8 @@ export const ROUTED_COMPONENTS = [
    BindingComponent,
    DirectiveComponent,
    PipeComponent,
-   ObservablessComponent,
-   SubjectssComponent,
+   ObservablesComponent,
+   SubjectsComponent,
    WelcomeComponent
    
    ]
@@ -25,8 +25,8 @@ const routes: Routes = [
     { path: 'app-binding', component: BindingComponent},
     { path: 'app-directive', component: DirectiveComponent},
     { path: 'app-pipe', component: PipeComponent},
-    { path: 'app-observabless', component: ObservablessComponent},
-    { path: 'app-subjectss', component: SubjectssComponent},
+    { path: 'app-observables', component: ObservablesComponent},
+    { path: 'app-subjects', component: SubjectsComponent},
     { path: 'app-welcome', component: WelcomeComponent},
     {
         path: '', component: WelcomeComponent
