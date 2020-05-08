@@ -22,6 +22,11 @@ import { ForDirective } from './directives/for.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
 import { ObservablesComponent } from './modules/elements/observables/observables.component';
 import { SubjectsComponent } from './modules/elements/subjects/subjects.component';
+import { PersonCrudComponent } from './modules/person-crud/person-crud.component';
+import { PersonCreateComponent } from './components/person/person-create/person-create.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +42,9 @@ import { SubjectsComponent } from './modules/elements/subjects/subjects.componen
     ForDirective,
     UppercasePipe,
     ObservablesComponent,
-    SubjectsComponent
+    SubjectsComponent,
+    PersonCrudComponent,
+    PersonCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +54,10 @@ import { SubjectsComponent } from './modules/elements/subjects/subjects.componen
     MatSidenavModule,
     MatListModule, 
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule
     //ROUTING
   ],
   providers: [],
