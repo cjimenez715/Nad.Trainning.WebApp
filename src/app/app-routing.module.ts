@@ -8,14 +8,14 @@ import { BindingComponent } from './modules/elements/binding/binding.component';
 import { DirectiveComponent } from './modules/elements/directive/directive.component';
 import { PipeComponent } from './modules/elements/pipe/pipe.component';
 import { WelcomeComponent } from './modules/home/welcome/welcome.component';
-<<<<<<< HEAD
+
 import { HttpClientsampleComponent } from './components/template/http-clientsample/http-clientsample.component';
 
 
-=======
+
 import { PersonCrudComponent}  from './modules/person-crud/person-crud.component';
 import { PersonCreateComponent} from './components/person/person-create/person-create.component'
->>>>>>> 88b3b5a858d7c1af0b939edb672a61b57ecb7c6f
+
 
 export const ROUTED_COMPONENTS = [
    BindingComponent,
@@ -24,7 +24,8 @@ export const ROUTED_COMPONENTS = [
    ObservablesComponent,
    SubjectsComponent,
    WelcomeComponent,
-   PersonCrudComponent
+   PersonCrudComponent,
+   HttpClientsampleComponent
    ]
  
 const routes: Routes = [
@@ -36,19 +37,11 @@ const routes: Routes = [
     { path: 'app-person-crud', component: PersonCrudComponent},
     { path: 'app-person-create', component: PersonCreateComponent},
     { path: 'app-welcome', component: WelcomeComponent},
-<<<<<<< HEAD
     { path: 'app-http-clientsample', component: HttpClientsampleComponent},
-    {
-        path: '', component: WelcomeComponent
-    },
-    {
-         path:'**',redirectTo:'app-welcome'
-    }
-=======
-    { path: '', component: WelcomeComponent },
-    { path:'**',redirectTo:'app-welcome'  },
+       
+    
 
->>>>>>> 88b3b5a858d7c1af0b939edb672a61b57ecb7c6f
+
   ] 
  // export const ROUTING = RouterModule.forChild(routes);
 @NgModule({

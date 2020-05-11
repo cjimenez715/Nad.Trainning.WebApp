@@ -4,7 +4,7 @@ Code:
 Name: 
 <input type="text" [(ngModel)]="catItem.Name">
 <br>
-<button type="button" (click)="saveCurrentCat()">Save cat</button>
+<button type="button" (click)="saveCurrentCat()">Save</button>
 
 <br>
 <br>
@@ -23,7 +23,7 @@ Name:
         <td>{{item.Code}}</td>
         <td>{{item.Name}}</td>
         <td><button (click)="deleteCatByID(item.Id)">Delete</button></td>
-        <td><button (click)="editCatByID(item.Id)">Delete</button></td>
+        <td><button (click)="editCatByID(item.Id)">Editar</button></td>
     </tr>
 </tbody>
 </table>
