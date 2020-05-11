@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CatService } from 'src/app/services/cats.services';
-import { Cat } from 'src/app/models/cat';
+import { Person } from 'src/app/models/Person';
 import { mergeMap, flatMap, map, tap } from "rxjs/operators";
 import { Observable } from 'rxjs';
+import { PersonService } from 'src/app/services/person.services';
 @Component({
   selector: 'app-http-clientsample',
   templateUrl: './http-clientsample.component.html',
@@ -10,60 +10,35 @@ import { Observable } from 'rxjs';
 })
 export class HttpClientsampleComponent implements OnInit {
 
-  catItem: Cat;
-  listCat: Array<Cat>;
-  constructor(private cat$: CatService) {
+  personItem: Person;
+  listPerson: Array<Person>;
+  constructor(private person$: PersonService) {
 
-    this.catItem = new Cat();
-    this.listCat = [];
+    this.personItem = new Person();
+    this.listPerson = [];
   }
   ngOnInit(): void {
 
-    this.cat$.getAllCats().subscribe(d => {
-      this.listCat = d;
+    this.person$.getAllPersons().subscribe(d => {
+      this.listPerson = d;
       console.log(d[0]);
     });
 
 
   }
-  saveCurrentCat(): void {
-    let subs = this.cat$.saveCat(this.catItem).pipe(
-      tap(cat => {
-        alert(cat.Code + ' - ' + cat.Name + ' ha sido salvado.');
-      }),
-      flatMap(d => {
-        return this.cat$.getAllCats().pipe(
-          map(dd => {
-            this.listCat = dd;
-            return d;
-          })
-        )
-      })
-    ).subscribe(
-      cat => {
-        this.catItem = cat;
-        subs.unsubscribe();
-      },
-      e => {
-        alert(JSON.stringify(e))
-      }
-    );
-    
-  }
+  
 
-  deleteCatByID(id: number): void {
-    this.cat$.deleteCat(id).pipe(
-      tap(() => alert('Cat deleted.')),
+  deletePersonByID(id: number): void {
+    this.person$.deletePerson(id).pipe(
+      tap(() => alert('Person deleted.')),
       flatMap(() => {
-        return this.cat$.getAllCats();
+        return this.person$.getAllPersons();
       })
-    ).subscribe(cats=>{
-      this.listCat = cats;
+    ).subscribe(dd=>{
+      this.listPerson = dd;
     });
   }
-  editCatByID(id: number):void{
-     
-  }
+
 }
 
 

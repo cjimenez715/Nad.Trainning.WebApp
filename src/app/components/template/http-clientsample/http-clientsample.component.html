@@ -1,13 +1,17 @@
-<h1>Cat's Registry</h1>
-Code: 
-<input type="text" [(ngModel)]="catItem.Code">
-<br>
-<br>
+<h1>Records Table Person</h1>
 Name: 
-<input type="text" [(ngModel)]="catItem.Name">
+<input type="text" [(ngModel)]="personItem.Name"/>
 <br>
 <br>
-<button type="button" (click)="saveCurrentCat()">Save</button>
+LastName: 
+<input type="text" [(ngModel)]="personItem.LastName"/>
+<br>
+<br>
+Age: 
+<input type="number" [(ngModel)]="personItem.Age"/>
+<br>
+<br>
+<button type="button">Save</button>
 
 <br>
 
@@ -16,18 +20,20 @@ Name:
     <thead>
     <tr >
         <td>Id</td>
-        <td>Code</td>
         <td>Name</td>
+        <td>LastName</td>
+        <td>Age</td>
         <td colspan="2">Action</td>
     </tr>
 </thead>
     <tbody>
-    <tr *ngFor="let item of listCat">
+    <tr *ngFor="let item of listPerson">
         <td >{{item.Id}}</td>
-        <td>{{item.Code}}</td>
         <td>{{item.Name}}</td>
-        <td><button (click)="deleteCatByID(item.Id)">Delete</button></td>
-        <td><button (click)="editCatByID(item.Id)">Edit</button></td>
+        <td>{{item.LastName}}</td>
+        <td>{{item.Age}}</td>
+        <td><button (click)="deletePersonByID(item.Id)">Delete</button></td>
+        <td><button >Edit</button></td>
     </tr>
 </tbody>
 </table>
