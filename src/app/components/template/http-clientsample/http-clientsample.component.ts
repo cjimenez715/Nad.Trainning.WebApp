@@ -40,12 +40,15 @@ export class HttpClientsampleComponent implements OnInit {
         )
       })
     ).subscribe(
-      
+      cat => {
+        this.catItem = cat;
+        subs.unsubscribe();
+      },
       e => {
         alert(JSON.stringify(e))
       }
     );
-    subs.unsubscribe();
+    
   }
 
   deleteCatByID(id: number): void {
