@@ -1,0 +1,10 @@
+<p>observables works!</p>
+
+<h1> observables</h1>
+<span *ngIf="withTraffic">With traffic</span>
+<span *ngIf="!withTraffic">Without traffic</span>
+
+<button (click)="withTraffic = !withTraffic">Switch Traffic</button>
+<button (click)="boyfriendWaiting()">Waiting for Girlfriend</button>
+<br>
+<p>{{messageHelper}} - {{messageInfo}}</p>

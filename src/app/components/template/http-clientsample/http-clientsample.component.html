@@ -1,0 +1,30 @@
+Code: 
+<input type="text" [(ngModel)]="catItem.Code">
+<br>
+Name: 
+<input type="text" [(ngModel)]="catItem.Name">
+<br>
+<button type="button" (click)="saveCurrentCat()">Save cat</button>
+
+<br>
+<br>
+<table>
+    <thead>
+    <tr >
+        <td>Id</td>
+        <td>Code</td>
+        <td>Name</td>
+        <td>Action</td>
+    </tr>
+</thead>
+    <tbody>
+    <tr *ngFor="let item of listCat">
+        <td >{{item.Id}}</td>
+        <td>{{item.Code}}</td>
+        <td>{{item.Name}}</td>
+        <td><button (click)="deleteCatByID(item.Id)">Delete</button></td>
+        <td><button (click)="editCatByID(item.Id)">Delete</button></td>
+    </tr>
+</tbody>
+</table>
+

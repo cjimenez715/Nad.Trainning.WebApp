@@ -22,6 +22,8 @@ import { ForDirective } from './directives/for.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
 import { ObservablessComponent } from './modules/elements/observabless/observabless.component';
 import { SubjectssComponent } from './modules/elements/subjectss/subjectss.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientsampleComponent } from './components/template/http-clientsample/http-clientsample.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,10 +39,12 @@ import { SubjectssComponent } from './modules/elements/subjectss/subjectss.compo
     ForDirective,
     UppercasePipe,
     ObservablessComponent,
-    SubjectssComponent
+    SubjectssComponent,
+    HttpClientsampleComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

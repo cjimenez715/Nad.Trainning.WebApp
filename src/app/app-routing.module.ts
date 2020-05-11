@@ -8,6 +8,7 @@ import { BindingComponent } from './modules/elements/binding/binding.component';
 import { DirectiveComponent } from './modules/elements/directive/directive.component';
 import { PipeComponent } from './modules/elements/pipe/pipe.component';
 import { WelcomeComponent } from './modules/home/welcome/welcome.component';
+import { HttpClientsampleComponent } from './components/template/http-clientsample/http-clientsample.component';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
     { path: 'app-observabless', component: ObservablessComponent},
     { path: 'app-subjectss', component: SubjectssComponent},
     { path: 'app-welcome', component: WelcomeComponent},
+    { path: 'app-http-clientsample', component: HttpClientsampleComponent},
     {
         path: '', component: WelcomeComponent
     },
