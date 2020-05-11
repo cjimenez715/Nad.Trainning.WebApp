@@ -13,7 +13,7 @@ export class BindingComponent implements OnInit {
   constructor() {
        this.bind = 'a';
        this.binde = 'fff';
-       this.person = ['Nombre1','Nombre2','Nombre3' ];
+       this.person = ['name1','name2','name3' ];
 
 
    }
@@ -23,6 +23,6 @@ export class BindingComponent implements OnInit {
 
   public bindingMetodh(param:string)
   {
-    this.person.push('nombre'+param)
+    this.person.push('name'+param)
         }
 }

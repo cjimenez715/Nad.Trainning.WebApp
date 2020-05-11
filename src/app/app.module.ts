@@ -20,10 +20,20 @@ import { PipeComponent } from './modules/elements/pipe/pipe.component';
 import { RedDirective } from './directives/red.directive';
 import { ForDirective } from './directives/for.directive';
 import { UppercasePipe } from './pipes/uppercase.pipe';
+<<<<<<< HEAD
 import { ObservablessComponent } from './modules/elements/observabless/observabless.component';
 import { SubjectssComponent } from './modules/elements/subjectss/subjectss.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientsampleComponent } from './components/template/http-clientsample/http-clientsample.component';
+=======
+import { ObservablesComponent } from './modules/elements/observables/observables.component';
+import { SubjectsComponent } from './modules/elements/subjects/subjects.component';
+import { PersonCrudComponent } from './modules/person-crud/person-crud.component';
+import { PersonCreateComponent } from './components/person/person-create/person-create.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {HttpClientModule} from '@angular/common/http'
+>>>>>>> 88b3b5a858d7c1af0b939edb672a61b57ecb7c6f
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,9 +48,16 @@ import { HttpClientsampleComponent } from './components/template/http-clientsamp
     RedDirective,
     ForDirective,
     UppercasePipe,
+<<<<<<< HEAD
     ObservablessComponent,
     SubjectssComponent,
     HttpClientsampleComponent
+=======
+    ObservablesComponent,
+    SubjectsComponent,
+    PersonCrudComponent,
+    PersonCreateComponent
+>>>>>>> 88b3b5a858d7c1af0b939edb672a61b57ecb7c6f
   ],
   imports: [
     BrowserModule,
@@ -51,7 +68,10 @@ import { HttpClientsampleComponent } from './components/template/http-clientsamp
     MatSidenavModule,
     MatListModule, 
     MatTableModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+    HttpClientModule
     //ROUTING
   ],
   providers: [],

@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pipe.component.css']
 })
 export class PipeComponent implements OnInit {
- public Texto : string
+ public text : string
  public currentdate : Date; 
  public amount: number;
   constructor() { 
-    this.Texto='pipe example..... ';
+    this.text='pipe example..... ';
     this.currentdate= new Date();
     this.amount = 54213;
   
