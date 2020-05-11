@@ -1,12 +1,16 @@
+<h1>Cat's Registry</h1>
 Code: 
 <input type="text" [(ngModel)]="catItem.Code">
+<br>
 <br>
 Name: 
 <input type="text" [(ngModel)]="catItem.Name">
 <br>
+<br>
 <button type="button" (click)="saveCurrentCat()">Save</button>
 
 <br>
+
 <br>
 <table>
     <thead>
@@ -23,7 +27,7 @@ Name:
         <td>{{item.Code}}</td>
         <td>{{item.Name}}</td>
         <td><button (click)="deleteCatByID(item.Id)">Delete</button></td>
-        <td><button (click)="editCatByID(item.Id)">Editar</button></td>
+        <td><button (click)="editCatByID(item.Id)">Edit</button></td>
     </tr>
 </tbody>
 </table>

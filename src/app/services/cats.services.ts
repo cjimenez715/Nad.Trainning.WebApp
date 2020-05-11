@@ -21,8 +21,9 @@ export class CatService {
     }
 
     saveCat(catItem: Cat): Observable<Cat>{
-        return this.http$.post<Cat>(`${this.ApiUrl}/Cat`, JSON.stringify(catItem), {
-            headers: new HttpHeaders().append('Content-Type', 'application/json')
+        return this.http$.post<Cat>(`${this.ApiUrl}/Cat`, JSON.stringify(catItem),{
+         headers : new HttpHeaders().append('content-Type','application/json')
+
         });
     }
     deleteCat(catid:number):Observable<void>{
