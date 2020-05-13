@@ -1,5 +1,6 @@
-<mat-sidenav-container>
-    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="65">
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened 
+                fixedInViewport="true" fixedTopGap="65">
         <mat-nav-list class="nav-list">
             <a [routerLink]="['/app-welcome']" mat-list-item>
                 <i class="material-icons">
@@ -37,19 +38,6 @@
                 </i>
                 Subjects
             </a>
-            <a [routerLink]="['/app-http-clientsample']" mat-list-item >
-                 <i class="material-icons">
-                    build
-                      </i>
-                 Sample services
-            </a>  
-
-            
-<!--            
-            <ul>
-                <li *appFor="let n Em [1, 2, 3]  " >  {{n}}   </li>
-            </ul> -->
-
             <a [routerLink]="['/app-person-crud']" mat-list-item>
                 <i class="material-icons">
                     linear_scale
@@ -59,4 +47,7 @@
        
         </mat-nav-list>
     </mat-sidenav>
+    <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
 </mat-sidenav-container>

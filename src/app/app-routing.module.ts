@@ -8,11 +8,6 @@ import { BindingComponent } from './modules/elements/binding/binding.component';
 import { DirectiveComponent } from './modules/elements/directive/directive.component';
 import { PipeComponent } from './modules/elements/pipe/pipe.component';
 import { WelcomeComponent } from './modules/home/welcome/welcome.component';
-
-import { HttpClientsampleComponent } from './components/template/http-clientsample/http-clientsample.component';
-
-
-
 import { PersonCrudComponent}  from './modules/person-crud/person-crud.component';
 import { PersonCreateComponent} from './components/person/person-create/person-create.component'
 
@@ -24,8 +19,7 @@ export const ROUTED_COMPONENTS = [
    ObservablesComponent,
    SubjectsComponent,
    WelcomeComponent,
-   PersonCrudComponent,
-   HttpClientsampleComponent
+   PersonCrudComponent
    ]
  
 const routes: Routes = [
@@ -36,12 +30,7 @@ const routes: Routes = [
     { path: 'app-subjects', component: SubjectsComponent},
     { path: 'app-person-crud', component: PersonCrudComponent},
     { path: 'app-person-create', component: PersonCreateComponent},
-    { path: 'app-welcome', component: WelcomeComponent},
-    { path: 'app-http-clientsample', component: HttpClientsampleComponent},
-       
-    
-
-
+    { path: 'app-welcome', component: WelcomeComponent}
   ] 
  // export const ROUTING = RouterModule.forChild(routes);
 @NgModule({

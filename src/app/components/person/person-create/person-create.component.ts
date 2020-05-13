@@ -1,7 +1,10 @@
-import { Person } from './../person.model';
-import { PersonService } from './../person.service';
+
+// import { Person } from './../person.model';
+// import { PersonService } from './../person.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Person } from 'src/app/models/person';
+import { PersonService } from 'src/app/services/person.services';
 
 @Component({
   selector: 'app-person-create',
@@ -10,16 +13,12 @@ import { Router } from '@angular/router';
 })
 export class PersonCreateComponent implements OnInit {
 
-  person: Person = {
-    Name: 'From Angular',
-    LastName : 'Test',
-    Age: 10
-  }
+  public person: Person;
 
   constructor(private personService: PersonService,
     private router: Router){
 
-
+     this.person = new Person();
   }
 
   ngOnInit(): void {
@@ -28,7 +27,7 @@ export class PersonCreateComponent implements OnInit {
 
   createPerson():void{
     this.personService.create(this.person).subscribe(p=>{
-        this.personService.showMessage(p.Name + " Person Created!");
+        this.personService.showMessage(p.Name + " Created!");
         this.router.navigate(['app-person-crud']);
       });
   }

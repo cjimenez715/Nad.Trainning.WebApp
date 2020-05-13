@@ -1,8 +1,23 @@
-<p>person-create works!</p>
 
-<button mat-raised-button (click)= "createPerson()" color="primary">
-    Save
-</button>
-<button mat-raised-button (click)= "cancel()">
-    Cancel
-</button>
+<mat-card>
+    <mat-card-title>New Person</mat-card-title>
+    <form >
+        <mat-form-field>
+            <input matInput placeholder="Name" [(ngModel)]="person.Name" [ngModelOptions]="{standalone: true}"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="LastName" [(ngModel)]="person.LastName" [ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Age" [(ngModel)]="person.Age"[ngModelOptions]="{standalone: true}">
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)= "createPerson()" color="primary">
+        Save
+    </button>
+    <button mat-raised-button (click)= "cancel()">
+        Cancel
+    </button>
+</mat-card>
+

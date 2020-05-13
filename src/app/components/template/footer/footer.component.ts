@@ -14,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
     position: fixed;
     bottom:0;
     display:flex;
-    justify-content: center;
+    justify-content: flex-end;
   }
   .footer > span {
     font-size: 1rem;
