@@ -1,6 +1,6 @@
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID} from '@angular/core';
 
 import { AppRoutingModule, ROUTED_COMPONENTS } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -32,7 +32,10 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
-import { PersonReadComponent } from './components/person/person-read/person-read.component'
+import { PersonReadComponent } from './components/person/person-read/person-read.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { PersonUpdateComponent } from './components/person/person-update/person-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,8 @@ import { PersonReadComponent } from './components/person/person-read/person-read
     SubjectsComponent,
     PersonCrudComponent,
     PersonCreateComponent,
-    PersonReadComponent
+    PersonReadComponent,
+    PersonUpdateComponent
 
   ],
   imports: [
@@ -69,7 +73,9 @@ import { PersonReadComponent } from './components/person/person-read/person-read
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    MatPaginatorModule,
+    MatSortModule
     //ROUTING
   ],
   providers: [],

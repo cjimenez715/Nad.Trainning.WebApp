@@ -12,6 +12,8 @@ import { Person } from 'src/app/models/person';
 export class PersonReadComponent implements OnInit {
 
   personList: Array<Person>
+  displayedColumns = ['id', 'name','lastName','age', 'action'];
+
   constructor(private personService:PersonService) { }
 
   ngOnInit(): void {

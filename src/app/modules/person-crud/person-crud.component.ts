@@ -13,6 +13,6 @@ export class PersonCrudComponent implements OnInit {
   }
 
   navigateToPersonCreate(): void {
-    this.router.navigate(['app-person-create'])
+    this.router.navigate(['app-person-create/0/0'])
   }
 }

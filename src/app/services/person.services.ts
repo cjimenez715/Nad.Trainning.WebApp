@@ -22,12 +22,24 @@ export class PersonService {
     })
   }
 
-  create(person: Person): Observable<Person>{
-    return this.http.post<Person>(this.baseUrl, person)
+  save(person: Person): Observable<Person>{
+    if(person.Id ==0)
+      return this.http.post<Person>(this.baseUrl, person)
+    else
+      return this.http.put<Person>(this.baseUrl, person);
+  }
+
+  getById(personId: string):Observable<Person>{
+    const url = `${this.baseUrl}/getById/${personId}`
+    return this.http.get<Person>(url)
   }
 
   getAll(): Observable<Array<Person>>{
-    return this.http.get<Array<Person>>(this.baseUrl+'/getAll')
-    
+    return this.http.get<Array<Person>>(this.baseUrl+'/getAll');
+  }
+
+  delete(personId: string):Observable<void>{
+     const url = `${this.baseUrl}/deleteById/${personId}`
+     return this.http.delete<void>(url);
   }
 }

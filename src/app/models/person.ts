@@ -1,9 +1,9 @@
 export class Person{
-  Id?: number
+  Id: number
   Name: string
-  LastName: string
-  Age: number
+  LastName?: string
+  Age?: number
   constructor() {
       
-    }
+  }
 }

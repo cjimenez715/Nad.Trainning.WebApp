@@ -1,20 +1,20 @@
 
 <mat-card>
-    <mat-card-title>New Person</mat-card-title>
+    <mat-card-title>{{lblTitle}} Person</mat-card-title>
     <form >
         <mat-form-field>
-            <input matInput placeholder="Name" [(ngModel)]="person.Name" [ngModelOptions]="{standalone: true}"> 
+            <input matInput placeholder="Name" [(ngModel)]="person.Name" [ngModelOptions]="{standalone: true}" disabled= "{{isDelete}}"> 
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="LastName" [(ngModel)]="person.LastName" [ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="LastName" [(ngModel)]="person.LastName" [ngModelOptions]="{standalone: true}" disabled= "{{isDelete}}"> 
         </mat-form-field>
         <mat-form-field>
-            <input matInput placeholder="Age" [(ngModel)]="person.Age"[ngModelOptions]="{standalone: true}">
+            <input matInput placeholder="Age" [(ngModel)]="person.Age"[ngModelOptions]="{standalone: true}" disabled= "{{isDelete}}"> 
         </mat-form-field>
     </form>
 
-    <button mat-raised-button (click)= "createPerson()" color="primary">
-        Save
+    <button mat-raised-button (click)= "execute()" color="primary">
+        {{lblTitle}}
     </button>
     <button mat-raised-button (click)= "cancel()">
         Cancel

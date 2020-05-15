@@ -1,3 +1,4 @@
+
 import { ObservablesComponent } from './modules/elements/observables/observables.component';
 import { SubjectsComponent } from './modules/elements/subjects/subjects.component';
 import { Observable } from 'rxjs';
@@ -29,7 +30,7 @@ const routes: Routes = [
     { path: 'app-observables', component: ObservablesComponent},
     { path: 'app-subjects', component: SubjectsComponent},
     { path: 'app-person-crud', component: PersonCrudComponent},
-    { path: 'app-person-create', component: PersonCreateComponent},
+    { path: 'app-person-create/:actionType/:id', component: PersonCreateComponent},
     { path: 'app-welcome', component: WelcomeComponent}
   ] 
  // export const ROUTING = RouterModule.forChild(routes);
