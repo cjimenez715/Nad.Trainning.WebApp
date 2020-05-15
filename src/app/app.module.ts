@@ -35,7 +35,6 @@ import {MatCardModule} from '@angular/material/card';
 import { PersonReadComponent } from './components/person/person-read/person-read.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { PersonUpdateComponent } from './components/person/person-update/person-update.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,8 +53,7 @@ import { PersonUpdateComponent } from './components/person/person-update/person-
     SubjectsComponent,
     PersonCrudComponent,
     PersonCreateComponent,
-    PersonReadComponent,
-    PersonUpdateComponent
+    PersonReadComponent
 
   ],
   imports: [

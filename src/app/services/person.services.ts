@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, EMPTY } from 'rxjs';
 import { Person } from '../models/Person';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -14,11 +14,12 @@ export class PersonService {
   constructor(private snackBar:MatSnackBar,
      private http:HttpClient) { }
 
-  showMessage(msg: string): void{
+  showMessage(msg: string, isError:boolean = false): void{
     this.snackBar.open(msg,'X',{
         duration: 3000,
         horizontalPosition:"right",
-        verticalPosition:"top"
+        verticalPosition:"top",
+        panelClass: isError? ['msg-error'] : ['msg-success']
     })
   }
 
@@ -41,5 +42,9 @@ export class PersonService {
   delete(personId: string):Observable<void>{
      const url = `${this.baseUrl}/deleteById/${personId}`
      return this.http.delete<void>(url);
+  }
+
+  errorHandler (e: any): Observable<any>{
+    return EMPTY;
   }
 }
