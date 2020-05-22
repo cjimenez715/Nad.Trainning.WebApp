@@ -2,6 +2,9 @@ import { PersonService } from 'src/app/services/person.services';
 import { Component, OnInit } from '@angular/core';
 import { Person } from 'src/app/models/person';
 import { Router, ActivatedRoute } from '@angular/router';
+import {FormControl} from '@angular/forms';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-person-create',
@@ -14,6 +17,9 @@ export class PersonCreateComponent implements OnInit {
   public personId: string;
   public lblTitle: string;
   public msgAction: string;
+  myControl = new FormControl();
+  options: Array<Person>
+  filteredOptions: Observable<Array<Person>>;
   constructor(private personService: PersonService, 
               private router: Router,
               private route: ActivatedRoute) { }
@@ -47,17 +53,56 @@ export class PersonCreateComponent implements OnInit {
           this.isDelete =  true;
           this.lblTitle = 'Delete';
           this.msgAction = 'Deleted';
+          this.myControl.disable();
           break;
         default:
             break;
     }    
 
-    if(this.personId != '0')
-    this.personService.getById(this.personId).subscribe(p=>{
-      this.person = p;
-    });
+    if(this.personId != '0'){
+      this.personService.getById(this.personId).subscribe(p=>{
+        this.person = p;
+        this.personService.getByfilterExceptId(" ",this.personId).subscribe(p=>{
+          this.options = p;
+  
+          this.filteredOptions = this.myControl.valueChanges
+          .pipe(
+            startWith(''),
+            map(value => typeof value === 'string' ? value : value.name),
+            map(name => name ? this._filter(name) : this.options.slice())
+          );
+          this.myControl.setValue(this.person.Parent)
+        });
+      });
+    }
+    else{
+      this.personService.getByfilterExceptId(" ",this.personId).subscribe(p=>{
+        this.options = p;
+
+        this.filteredOptions = this.myControl.valueChanges
+        .pipe(
+          startWith(''),
+          map(value => typeof value === 'string' ? value : value.name),
+          map(name => name ? this._filter(name) : this.options.slice())
+        );
+      });
+    }
+
   }
 
+  displayFn(person: Person): string {
+    return person && person.Name && person.LastName ? person.Name + ' - ' + person.LastName : '';
+  }
+
+  private _filter(name: string): Person[] {
+    const filterValue = name.toLowerCase();
+
+    return this.options.filter(option => option.Name.toLowerCase().indexOf(filterValue) === 0);
+  }
+
+  selected(parentSelected) {
+    this.person.Parent = parentSelected;
+  }
 
   execute():void{
     if(this.isDelete){

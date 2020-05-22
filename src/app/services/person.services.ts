@@ -44,6 +44,11 @@ export class PersonService {
      return this.http.delete<void>(url);
   }
 
+  getByfilterExceptId(filter:string, personId:string): Observable<Array<Person>>{
+    const url = `${this.baseUrl}/getByFilterExceptId/${filter}/${personId}`
+    return this.http.get<Array<Person>>(url)
+  }
+
   errorHandler (e: any): Observable<any>{
     return EMPTY;
   }

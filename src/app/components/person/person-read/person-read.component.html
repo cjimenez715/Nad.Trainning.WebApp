@@ -26,6 +26,10 @@
         <th mat-header-cell *matHeaderCellDef>Age</th>
         <td mat-cell *matCellDef="let row">{{row.Age}}</td>
       </ng-container>
+      <ng-container matColumnDef="parent">
+        <th mat-header-cell *matHeaderCellDef>Parent</th>
+        <td mat-cell *matCellDef="let row">{{row.Parent?.Name}} - {{row.Parent?.LastName}}</td>
+      </ng-container>
 
       <!-- ACtion Column -->
       <ng-container matColumnDef="action">

@@ -1,4 +1,4 @@
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID} from '@angular/core';
 
@@ -35,6 +35,9 @@ import {MatCardModule} from '@angular/material/card';
 import { PersonReadComponent } from './components/person/person-read/person-read.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {FormControl} from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,10 +73,12 @@ import { MatSortModule } from '@angular/material/sort';
     HttpClientModule,
     MatFormFieldModule,
     MatInputModule,
+    MatAutocompleteModule,
     FormsModule,
     MatCardModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    ReactiveFormsModule
     //ROUTING
   ],
   providers: [],
